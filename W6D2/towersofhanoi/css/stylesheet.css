@@ -1,0 +1,38 @@
+ul {
+  width: 200px;
+  height: 300px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  width: 200px;
+  height: 100px;
+  float: left;
+  list-style: none;
+  margin: 10px auto;
+}
+
+.disk-1 {
+  background-color: grey;
+  border-radius: 25px;
+  width: 50px;
+}
+
+.disk-2 {
+  background-color: grey;
+  border-radius: 25px;
+  width: 100px;
+}
+
+.disk-3 {
+  background-color: grey;
+  border-radius: 25px;
+  width: 200px;
+}
+
+.hanoi {
+  float: left;
+  display: flex;
+}

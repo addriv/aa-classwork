@@ -1,0 +1,9 @@
+<h1><%= @fuck_list.name %></h1>
+<p><%= @fuck_list.description %></p>
+
+<% @fuck_list.fucks.each do |fuck| %>
+  <%= link_to fuck.name, fuck_url(fuck) %>
+<% end %>
+
+<%= button_to "Add a Fuck!", new_fuck_list_fuck_url(@fuck_list), method: :get %>
+<%= button_to "View All FuckLists", fuck_lists_url, method: :get %>
