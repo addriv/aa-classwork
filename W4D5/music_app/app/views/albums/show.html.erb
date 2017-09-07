@@ -1,0 +1,12 @@
+<h1>Album Info</h1>
+<body>
+  <ul>
+    <li>Title: <%= @album.title %></li>
+    <li>Year: <%= @album.year %></li>
+    <li>Band: <%= @album.band.name %></li>
+    <li>Live: <%= @album.live %></li>
+    <%= button_to "Band", band_url(@album.band_id), method: :get  %>
+    <%= button_to "Edit", edit_album_url(@album), method: :get %>
+    <%= button_to "Delete", album_url(@album), method: :delete %>
+  </ul>
+</body>

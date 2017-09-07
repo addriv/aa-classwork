@@ -1,0 +1,35 @@
+<!-- below tells the form where to go after submission -->
+ <form action="/cats" method="post">
+
+<!-- below is same as above -->
+<!-- <form action="<%= cats_url %>" method="post"> -->
+  <h1>Enter the information for your cat!</h1>
+
+  <label for="name">Name</label>
+  <input id="name" type="text" name="cats[name]" value="">
+  <br>
+
+  <label for="sex">Sex</label>
+  <input id="sex" type="radio" name="cats[sex]" value="M"> Male
+  <input id="sex" type="radio" name="cats[sex]" value="F"> Female
+  <br>
+
+  <label for="birth_date">Birth Date</label>
+  <input id="birth_date" type="date" name="cats[birth_date]" value="">
+  <br>
+
+  <label for="color">Color</label>
+  <select name="cats[color]">
+    <option value="" selected>-- Select Color --</option>
+    <% colors = %w(grey black yellow red blue green) %>
+    <% colors.each do |color| %>
+      <option value="<%= color %>"> <%= color.capitalize %> </option>
+    <% end %>
+  </select>
+
+  <br>
+  <label for="description">description</label>
+  <textarea name="cats[description]" rows="8" cols="80"></textarea>
+  <br>
+  <input type="submit">
+</form>
