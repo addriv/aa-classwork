@@ -24,9 +24,9 @@ const Names = [
 ];
 
 const Panes = [
-  { name: 'Tab 1', content: 'First tab content' },
-  { name: 'Tab 2', content: 'Second tab content' },
-  { name: 'Tab 3', content: 'Third tab content' },
+  { name: '1', content: 'First tab content' },
+  { name: '2', content: 'Second tab content' },
+  { name: '3', content: 'Third tab content' },
 ];
 
 class Root extends React.Component {

@@ -9784,7 +9784,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Names = ['Adrian', 'Kevin', 'Derrick', 'Connor', 'Brian', 'Tommy', 'Rebekah', 'David', 'Jerry', 'Mike', 'Nixon', 'Betty', 'Jimmy', 'Carmen'];
 
-var Panes = [{ name: 'Tab 1', content: 'First tab content' }, { name: 'Tab 2', content: 'Second tab content' }, { name: 'Tab 3', content: 'Third tab content' }];
+var Panes = [{ name: '1', content: 'First tab content' }, { name: '2', content: 'Second tab content' }, { name: '3', content: 'Third tab content' }];
 
 var Root = function (_React$Component) {
   _inherits(Root, _React$Component);
