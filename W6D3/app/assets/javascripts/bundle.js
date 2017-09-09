@@ -250,20 +250,17 @@ class TweetCompose {
   }
 
   mentionedUserHandler() {
-      const $anchor = $('.add-mentioned-user');
-      $anchor.on('click', e => {
-        this.addMentionedUser();
+    const $anchor = $('.add-mentioned-user');
+    $anchor.on('click', e => {
+      this.addMentionedUser();
+      return false;
+    });
 
-        const $removeAnchor = $('.remove-mentioned-user');
-        $removeAnchor.on('click', e2 => {
-        // debugger;
-        $(e2.currentTarget).parent().remove();
-        return false;
-        });
-
-        return false;
-      });
-
+    const $removeAnchor = $('.mentioned-users');
+    $removeAnchor.on('click', '.remove-mentioned-user', e2 => {
+      $(e2.currentTarget).parent().remove();
+      return false;
+    });
   }
 
   addMentionedUser() {
