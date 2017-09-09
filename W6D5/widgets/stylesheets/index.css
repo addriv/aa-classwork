@@ -24,9 +24,13 @@ div.tabs > ul{
   display: flex;
 }
 
+
 h2 {
   padding: 5px;
   margin-top: 0;
+  outline: solid red 1px;
+  width: 100%;
+  text-align: center;
 }
 
 .clock {
@@ -48,5 +52,6 @@ h1 {
 }
 
 article {
-  text-align: center
+  text-align: center;
+  width: 100%;
 }
