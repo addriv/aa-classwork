@@ -1,0 +1,78 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+ul {
+  list-style: none;
+}
+
+li img {
+  width: 50px;
+  height: 50px;
+}
+
+.pokedex {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  height: calc(100vh - 63px);
+}
+
+.poke-index {
+  float: left;
+  width: 35%;
+  overflow: auto;
+  padding-right: 2%;
+  border-right: 3px solid lightgray;
+}
+
+.poke-index li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2vw;
+}
+
+.poke-index li:hover {
+  background-color: #FF7F7F;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.poke-detail {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  width: 63%;
+  // border-left: 3px solid black;
+
+}
+
+.poke-detail-li {
+  margin-top: 10px;
+  font-size: 2vw;
+  list-style: none;
+  margin-left: 10px;
+}
+
+.poke-detail img {
+  width: 100%;
+  border-bottom: 3px solid lightgray;
+  padding: 10px;
+  // padding-bottom: 10px;
+}
+
+.poke-index a {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+}
+
+.items-ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.items-ul li,  {
+}
