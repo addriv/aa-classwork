@@ -1,0 +1,16 @@
+<%= @comment.author.username %>
+<%= @comment.body %>
+
+<% @comment.children.each do |comment| %>
+  <%= comment.body %><%= button_to "Reply", comment_url(comment), method: 'get' %>
+<% end %>
+
+<form action="<%= comments_url %>" method="post">
+  <label for="body">Reply To This Comment</label>
+  <br>
+  <%= auth_token %>
+  <textarea id="body" name="comment[body]" rows="8" cols="80"></textarea>
+  <input type="hidden" name="comment[fuck_id]" value="<%= @comment.fuck.id %>">
+  <input type="hidden" name="comment[parent_id]" value="<%= @comment.id %>">
+  <input type="submit" value="Add Comment">
+</form>

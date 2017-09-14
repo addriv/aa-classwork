@@ -1,0 +1,21 @@
+<% action_url = fuck_list.persisted? ? fuck_list_url(fuck_list) : fuck_lists_url %>
+
+<form action="<%= action_url %>" method="post">
+  <%= auth_token %>
+  <%= patch_tag if fuck_list.persisted? %>
+
+  <label for="name">Name</label>
+  <input id="name" type="text" name="fuck_list[name]" value="<%= fuck_list.name %>">
+
+  <br>
+
+  <label for="description">Description</label>
+
+  <br>
+
+  <textarea name="fuck_list[description]" rows="8" cols="80"><%= fuck_list.description%></textarea>
+
+  <br>
+
+  <input type="submit" value="<%= fuck_list.persisted? ? "Edit FuckList" : "Make FuckList" %>">
+</form>

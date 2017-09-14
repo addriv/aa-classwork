@@ -1,0 +1,61 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cat-killer-box {
+  margin: auto;
+  font-size: 3em;
+  font-weight: bold;
+  background: black;
+  color: white;
+  text-align: center;
+}
+.murder {
+  color: red;
+}
+.cat-killer-msg {
+  text-align: center;
+  margin: 0% 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: auto;
+  padding: 50px;
+  text-align: center;
+  padding: 10px 10px;
+  border: 5px solid black;
+}
+
+.signup-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.errors {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 3em
+}
+
+input[type="submit"] {
+
+  width: 33%;
+}
+.signup-body img {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  overflow: hidden;
+  min-width: 300px;
+}

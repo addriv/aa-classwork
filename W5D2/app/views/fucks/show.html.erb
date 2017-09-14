@@ -1,0 +1,25 @@
+<h1><%= @fuck.name %></h1>
+<%= @fuck.content %>
+<br>
+<%= image_tag @fuck.img_url %>
+<%= button_to "Edit This Fuck", edit_fuck_url(@fuck), method: 'get' %>
+
+<ul>
+  hey
+  <% @fuck.comments.where(parent_id: nil).each do |comment| %>
+    <%= comments_recursive(comment) %>
+  <%#= link_to comment.body, comment_url(comment), method: 'get' %>
+  <% end %>
+</ul>
+
+
+<form action="<%= comments_url %>" method="post">
+  <label for="body">Comment This Fuck</label>
+  <br>
+  <%= auth_token %>
+  <textarea id="body" name="comment[body]" rows="8" cols="80"></textarea>
+  <input type="hidden" name="comment[fuck_id]" value="<%= @fuck.id %>">
+  <input type="submit" value="Add Comment">
+</form>
+
+<!-- <%#= button_to "Back to the list", fuck_list_url(@fuck.fuck_lists.first), method: 'get' %> -->

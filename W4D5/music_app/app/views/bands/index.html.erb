@@ -1,0 +1,11 @@
+<h1>Band List</h1>
+<ol>
+  <% @bands.each do |band| %>
+  <li>
+    <a href="<%= band_url(band) %>"><p><%= band.name %></p></a>
+    <p><%= button_to "edit", edit_band_url(band), method: :get %></p>
+    <p><%= button_to "delete", band_url(band), method: :delete %></p>
+  </li>
+  <br>
+  <% end %>
+</ul>

@@ -1,0 +1,29 @@
+<% action_url = @fuck.persisted? ? fuck_url(@fuck) : fuck_list_fucks_url(fuck_list) %>
+<% submit_text = @fuck.persisted? ? 'Update Fuck' : 'Create Fuck' %>
+
+<form action="<%= action_url %>" method="post">
+  <%= auth_token %>
+  <%= patch_tag if @fuck.persisted? %>
+
+  <label for="name">Name</label>
+  <input id="name" type="text" name="fuck[name]" value="<%= @fuck.name %>">
+  <br>
+  <label for="img-url">Image URL</label>
+  <input id="img-url" type="text" name="fuck[img_url]" value="<%= @fuck.img_url %>">
+  <br>
+  <label for="content">About this Fuck</label>
+  <br>
+  <textarea id="content" name="fuck[content]" rows="8" cols="80"><%= @fuck.content %></textarea>
+  <br>
+
+  <% FuckList.all.each do |fuck_list| %>
+    <input type="checkbox" name="fuck[fuck_list_ids][]" value="<%= fuck_list.id %>">
+    <%= fuck_list.name %>
+    <br>
+  <% end %>
+
+  <input type="hidden" name="fuck[fuck_list_ids][]" value="<%= params[:fuck_list_id] %>">
+  <input type="submit" value="<%= submit_text %>">
+
+
+</form>
