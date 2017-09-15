@@ -6,7 +6,9 @@ import { Route } from 'react-router-dom';
 export default class PokemonDetail extends React.Component {
 
   componentDidMount() {
-    this.props.fetchPokemon(this.props.match.params.pokemonId);
+    if (!this.props.pokemon || !this.props.pokemon.poke_type) {
+      this.props.fetchPokemon(this.props.match.params.pokemonId);
+    }
   }
 
   componentWillReceiveProps(newProps){
@@ -30,21 +32,37 @@ export default class PokemonDetail extends React.Component {
       );
     });
 
+    let display;
+
+    if (this.props.loading) {
+      display = (
+        <div id="loading-pokeball-container">
+          <div id="loading-pokeball"></div>
+        </div>
+      );
+    } else {
+      display = (
+        <div>
+          <img src={poke.image_url} />
+          <li className='poke-detail-li'>Poke #: {poke.id}</li>
+          <li className='poke-detail-li'>Name: {poke.name}</li>
+          <li className='poke-detail-li'>Attack: {poke.attack}</li>
+          <li className='poke-detail-li'>Defense: {poke.defense}</li>
+          <li className='poke-detail-li'>Type: {poke.poke_type}</li>
+
+          <ul className='items-ul'>
+            {items}
+          </ul>
+          <Route
+            path='/pokemon/:pokemonId/item/:itemId'
+            component={ItemDetailContainer}/>
+        </div>
+      );
+    }
+
     return (
       <div className='poke-detail'>
-        <img src={poke.image_url} />
-        <li className='poke-detail-li'>Poke #: {poke.id}</li>
-        <li className='poke-detail-li'>Name: {poke.name}</li>
-        <li className='poke-detail-li'>Attack: {poke.attack}</li>
-        <li className='poke-detail-li'>Defense: {poke.defense}</li>
-        <li className='poke-detail-li'>Type: {poke.poke_type}</li>
-
-        <ul className='items-ul'>
-          {items}
-        </ul>
-        <Route
-          path='/pokemon/:pokemonId/item/:itemId'
-          component={ItemDetailContainer}/>
+        {display}
       </div>
    );
   }

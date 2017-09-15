@@ -31,7 +31,6 @@
    display: flex;
    justify-content: center;
    background-color: $red;
-   padding: 10px;
 
    img {
      width: 43px;
@@ -42,7 +41,6 @@
  nav {
    width: 900px;
    background-color: $red;
-   padding: 6px;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -50,6 +48,7 @@
    ul {
      display: flex;
      justify-content: flex-end;
+     margin: 5px;
 
      li {
        a {

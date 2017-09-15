@@ -6,7 +6,8 @@ import { selectAllPokemon } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   pokemon: selectAllPokemon(state),
-  items: state.entities.items
+  items: state.entities.items,
+  loading: state.loading
 });
 
 const mapDispatchToProps = dispatch => ({

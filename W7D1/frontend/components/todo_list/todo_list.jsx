@@ -13,7 +13,7 @@ const TodoList = ( { todos, receiveTodo } ) => {
 
   return (
     <div>
-      <TodoForm receiveTodo={receiveTodo} Util={ Util }/>
+      <TodoForm receiveTodo={receiveTodo} />
       <ul>
         { todoListItems }
       </ul>

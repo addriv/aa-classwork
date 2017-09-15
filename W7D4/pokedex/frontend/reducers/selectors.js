@@ -9,3 +9,7 @@ export const selectPokemonById = state => (
 export const selectCachedItems = state => (
   state.entities.items
 );
+
+export const selectAllErrors = state => (
+  Object.values(state.errors)
+);

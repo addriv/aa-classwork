@@ -14,7 +14,13 @@
 
   <body>
     <header>
-      <img src="./assets/pokeball.svg" alt="pokedex">
+      <nav>
+        <img src="./assets/pokeball.svg" alt="pokedex">
+        <ul>
+          <li>
+            <%= link_to "Create Pokemon", "/#/" %>
+          </li>
+        </ul>
     </header>
 
     <%= yield %>

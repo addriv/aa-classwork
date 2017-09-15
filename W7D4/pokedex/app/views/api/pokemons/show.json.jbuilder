@@ -1,8 +1,12 @@
-# json.partial! 'api/pokemons/pokemon', pokemon: @pokemon
-
 json.pokemon do
   json.extract! @pokemon, :id, :name, :attack, :defense
-  json.image_url "assets/#{@pokemon.image_url}"
+
+  if @pokemon.image_url.include?('.svg')
+    json.image_url "assets/#{@pokemon.image_url}"
+  else
+    json.image_url @pokemon.image_url
+  end
+
   json.extract! @pokemon, :moves, :poke_type
 end
 

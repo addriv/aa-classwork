@@ -25,7 +25,7 @@ export default class TodoForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ id: this.props.Util.uniqueId()},
+    this.setState({ id: Util.uniqueId()},
                     () => this.props.receiveTodo(this.state));
     // this.props.receiveTodo(this.state);
   }
